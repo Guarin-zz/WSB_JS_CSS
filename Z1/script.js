@@ -83,8 +83,15 @@ function validateNumber(number) {
 
 function validateRadio(radio) {
     // todo
-
-    return true;
+    let radios = document.getElementsByName("favouriteNumber");
+    let radioValid = false;
+    let i = 0;
+    while (!radioValid && i < radios.length) {
+        if (radios[i].checked) radioValid = true;
+        i++;
+    }
+    if (!radioValid) alert("Must check some option!");
+    return radioValid;
 }
 
 function validatePassword(password) {
